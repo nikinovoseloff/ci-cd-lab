@@ -18,8 +18,19 @@
 | `backend/` | API, модели, тесты, Dockerfile |
 | `frontend/` | SPA, nginx-конфиг, Dockerfile |
 | `scripts/` | проверки и деплой |
-| `compose.yaml` | стек `db + api + web` (появится на L3) |
+| `compose.yaml` | стек `db + api + web` |
 | `.github/workflows/` | CI и CD (появятся на L5–L6) |
+
+## Запуск на VPS
+
+```bash
+cp .env.example .env       # заменить POSTGRES_PASSWORD и DATABASE_URL
+docker compose up -d
+docker compose ps
+curl -fsS http://127.0.0.1:8080/api/health
+```
+
+`web` слушает только `127.0.0.1:8080`; наружу его отдаёт host-nginx с TLS.
 
 ## Локальная проверка
 
@@ -32,4 +43,4 @@
 
 ## Статус
 
-В разработке: этап L0–L1 (фундамент). Публичный адрес появится после L4.
+В разработке: этапы L0–L3. Публичный HTTPS-адрес появится после L4.
