@@ -49,4 +49,5 @@ curl -fsS http://127.0.0.1:8080/api/health
 
 ## Статус
 
-В разработке: этапы L0–L6. Публичный HTTPS-адрес: https://ci-cd-lab-nv.duckdns.org
+Этапы L0–L7 закрыты. Публичный HTTPS-адрес: https://ci-cd-lab-nv.duckdns.org
+Следующий шаг — 0.8: cloud-провайдер, VM и S3.
