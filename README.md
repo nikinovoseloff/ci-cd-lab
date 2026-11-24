@@ -32,6 +32,12 @@ curl -fsS http://127.0.0.1:8080/api/health
 
 `web` слушает только `127.0.0.1:8080`; наружу его отдаёт host-nginx с TLS.
 
+## CI/CD
+
+- push в `main` → CI: тесты backend, сборка frontend, публикация образов в GHCR;
+- после успешного CI → CD: SSH на VPS, `compose pull`, health-check, откат;
+- Actions: https://github.com/nikinovoseloff/ci-cd-lab/actions
+
 ## Локальная проверка
 
 Проверки выполняются на lab VM в контейнерах:
@@ -43,4 +49,4 @@ curl -fsS http://127.0.0.1:8080/api/health
 
 ## Статус
 
-В разработке: этапы L0–L3. Публичный HTTPS-адрес появится после L4.
+В разработке: этапы L0–L6. Публичный HTTPS-адрес: https://ci-cd-lab-nv.duckdns.org
