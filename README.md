@@ -19,7 +19,7 @@
 | `frontend/` | SPA, nginx-конфиг, Dockerfile |
 | `scripts/` | проверки и деплой |
 | `compose.yaml` | стек `db + api + web` |
-| `.github/workflows/` | CI и CD (появятся на L5–L6) |
+| `.github/workflows/` | `ci.yml` и `deploy.yml` |
 
 ## Запуск на VPS
 
