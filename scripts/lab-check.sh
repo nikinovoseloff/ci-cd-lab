@@ -21,3 +21,6 @@ docker run --rm --network "$NET" \
   -v "$PWD/backend:/app" -v ci-cd-lab-pip:/root/.cache/pip -w /app \
   -e DATABASE_URL=postgresql+psycopg://tasks:test@ci-cd-lab-test-db:5432/tasks_test \
   python:3.12-slim sh -c 'pip install -q -r requirements-dev.txt && pytest -q'
+
+docker run --rm -v "$PWD/frontend:/app" -v ci-cd-lab-npm:/root/.npm -w /app \
+  node:20-alpine sh -c 'npm ci && npm run build'
